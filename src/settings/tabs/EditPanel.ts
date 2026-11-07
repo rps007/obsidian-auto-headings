@@ -29,12 +29,13 @@ const NUMERAL_ORDER: NumeralStyle[] = [
 	"cjk",
 	"circled",
 	"lower-alpha",
+	"double-lower-alpha",
 	"upper-alpha",
 	"lower-roman",
 	"upper-roman",
 ];
 
-/** 取序号样式在当前语言下的下拉标签（只显示例字形，testplan L24）。 */
+/** 取序号样式在当前语言下的下拉标签（通常显示例字形，testplan L24）。 */
 function numeralLabel(style: NumeralStyle, t: Messages): string {
 	switch (style) {
 		case "arabic":
@@ -45,6 +46,8 @@ function numeralLabel(style: NumeralStyle, t: Messages): string {
 			return t.numeralCircled;
 		case "lower-alpha":
 			return t.numeralLowerAlpha;
+		case "double-lower-alpha":
+			return t.numeralDoubleLowerAlpha;
 		case "upper-alpha":
 			return t.numeralUpperAlpha;
 		case "lower-roman":

@@ -173,6 +173,8 @@ const fr: Partial<Messages> = {
 	skipFillDrop: "Omettre (supprimer le segment)",
 	skipFillNone: "Ne pas numéroter (laisser tel quel)",
 
+	numeralDoubleLowerAlpha: "Lettres minuscules doublées (aa, bb, cc)",
+
 	matchExact: "Exacte",
 	matchPartial: "Partielle",
 	matchSubtree: "Sous-arbre",

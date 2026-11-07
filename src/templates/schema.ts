@@ -42,6 +42,7 @@ const NUMERAL_STYLES: readonly NumeralStyle[] = [
 	"cjk",
 	"circled",
 	"lower-alpha",
+	"double-lower-alpha",
 	"upper-alpha",
 	"lower-roman",
 	"upper-roman",

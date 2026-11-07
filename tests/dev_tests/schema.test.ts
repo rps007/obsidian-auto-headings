@@ -181,6 +181,14 @@ describe("serializeTemplate", () => {
 		expect(JSON.parse(json)).toEqual(t);
 	});
 
+	it("G10：双小写字母样式在模板保存和重新载入后保持不变", () => {
+		const template = createDefaultTemplate();
+		template.levels.h6.numeral = "double-lower-alpha";
+		const reloaded = normalizeTemplate(JSON.parse(serializeTemplate(template)), "fb");
+		expect(reloaded.levels.h6.numeral).toBe("double-lower-alpha");
+		expect(reloaded.levels.h5.numeral).toBe("arabic");
+	});
+
 	it("inheritDepth 序列化、反序列化后保持正确", () => {
 		const t = normalizeTemplate({ levels: { h3: { inheritDepth: 1 } } }, "fb");
 		const roundTrip = normalizeTemplate(JSON.parse(serializeTemplate(t)), "fb");

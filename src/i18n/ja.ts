@@ -167,6 +167,8 @@ const ja: Partial<Messages> = {
 
 	numeralCjk: "一, 二, 三",
 
+	numeralDoubleLowerAlpha: "小文字の繰り返し（aa, bb, cc）",
+
 	matchExact: "全体",
 	matchPartial: "部分",
 	matchSubtree: "サブツリー",

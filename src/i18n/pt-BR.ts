@@ -171,6 +171,8 @@ const ptBR: Partial<Messages> = {
 	skipFillDrop: "Omitir (suprimir o segmento)",
 	skipFillNone: "Não numerar (deixar como está)",
 
+	numeralDoubleLowerAlpha: "Letras minúsculas duplas (aa, bb, cc)",
+
 	matchExact: "Exata",
 	matchPartial: "Parcial",
 	matchSubtree: "Subárvore",

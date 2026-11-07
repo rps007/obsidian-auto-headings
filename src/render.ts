@@ -164,8 +164,7 @@ function toRoman(value: number, uppercase: boolean): string {
 
 /**
  * 将一个纯阿拉伯整数渲染为指定序号样式的字符串。
- * 支持 `arabic` / `cjk` / `circled` / `lower-alpha` / `upper-alpha` /
- * `lower-roman` / `upper-roman`（见 spec.md §3.6）。
+ * 支持模板下拉中的所有序号样式（见 spec.md §3.6）。
  */
 export function renderNumeral(style: NumeralStyle, value: number): string {
 	switch (style) {
@@ -177,6 +176,14 @@ export function renderNumeral(style: NumeralStyle, value: number): string {
 			return toCircled(value);
 		case "lower-alpha":
 			return toAlpha(value, 0x61); // 'a'
+		case "double-lower-alpha": {
+			if (value <= 0) {
+				return String(value);
+			}
+			// 每用完一轮字母表，就增加一次重复：aa…zz、aaa…zzz。
+			const index = value - 1;
+			return toAlpha((index % 26) + 1, 0x61).repeat(2 + Math.floor(index / 26));
+		}
 		case "upper-alpha":
 			return toAlpha(value, 0x41); // 'A'
 		case "lower-roman":

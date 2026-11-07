@@ -119,7 +119,7 @@ Exact matches are listed first, then headings linked more often, then headings i
 Every heading level (H1–H6) has independent control over:
 
 -   **Prefix** and **suffix** (e.g. "第" + "章" → `第1章`)
--   **Numeral style** — seven of them: Arabic (`1`), Chinese (`一二三`), circled (`①②③`), lowercase/uppercase letters, lowercase/uppercase Roman numerals
+-   **Numeral style** — Arabic (`1`), Chinese (`一二三`), circled (`①②③`), lowercase and uppercase letters, Double lowercase letters (`aa, bb, …, zz, aaa, bbb, …`), and lowercase and uppercase Roman numerals
 -   **Number separator** (the `.` in `1.1`) and **title separator** (the space between the number and your heading text)
 -   **Inherit-parent toggle** — on by default (`1.1.1`); turn it off for a level to show only that level's own numeral (e.g. `a)` instead of `1.a)`)
 -   **Inherit depth** — inheriting is no longer all-or-nothing. It reaches up to the start level by default, but you can cap how many ancestors come along: H1 stands alone as `一、二、`, H2 starts its own `1`, and H3 picks up only its H2 parent for `2.1` — without dragging H1 into the prefix. Getting that middle ground used to mean pushing the start level deeper, which cancelled H1's numbering along with it

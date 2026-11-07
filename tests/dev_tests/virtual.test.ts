@@ -40,6 +40,20 @@ describe("computeVirtualNumbers：显示的编号（testplan V8 / V9）", () => 
 		expect(labels.every((l) => l.label === null || !l.label.includes(WJ))).toBe(true);
 	});
 
+	it("G10：仅显示模式按父级重置双小写字母，保留混合继承样式", () => {
+		const template = tpl((t) => {
+			t.levels.h3.numeral = "double-lower-alpha";
+		});
+		const content = "## 甲\n### 子一\n### 子二\n## 乙\n### 子三";
+		expect(computeVirtualNumbers(content, template).map((heading) => heading.label)).toEqual([
+			"1 ",
+			"1.aa ",
+			"1.bb ",
+			"2 ",
+			"2.aa ",
+		]);
+	});
+
 	it("widget 位置在 `#` 与空白之后", () => {
 		const labels = computeVirtualNumbers("##   多个空格\n###\t制表符", DEFAULT_TEMPLATE);
 		expect(labels.map((l) => [l.lineIndex, l.textStart])).toEqual([

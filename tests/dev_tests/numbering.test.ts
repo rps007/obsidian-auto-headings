@@ -110,6 +110,45 @@ describe("renderNumeral", () => {
 		expect(renderNumeral("upper-alpha", 52)).toBe("AZ");
 	});
 
+	it("G10：双小写字母从 aa 开始，每轮增加一个重复字母", () => {
+		expect(
+			[0, 1, 2, 3, 26, 27, 28, 52, 53].map((value) =>
+				renderNumeral("double-lower-alpha", value),
+			),
+		).toEqual(["0", "aa", "bb", "cc", "zz", "aaa", "bbb", "zzz", "aaaa"]);
+	});
+
+	it("G10：设置预览与写入模式遵循双小写字母样式", () => {
+		const template: Template = {
+			...DEFAULT_TEMPLATE,
+			levels: {
+				...DEFAULT_TEMPLATE.levels,
+				h3: {
+					...DEFAULT_TEMPLATE.levels.h3,
+					numeral: "double-lower-alpha",
+					inherit: false,
+				},
+			},
+		};
+		const marked = (label: string) => WORD_JOINER + label + " " + WORD_JOINER;
+		expect(previewLevel(template, 3)).toEqual(["aa", "bb", "cc"].map(marked));
+
+		const content = "## 第一章\n### alpha\n### beta\n## 第二章\n### gamma";
+		const expected = [
+			"## " + marked("1") + "第一章",
+			"### " + marked("aa") + "alpha",
+			"### " + marked("bb") + "beta",
+			"## " + marked("2") + "第二章",
+			"### " + marked("aa") + "gamma",
+		].join("\n");
+		expect(renumberContent(content, template)).toBe(expected);
+		expect(renumberContent(expected, template)).toBe(expected);
+		expect(stripPrefix(marked("aa") + "alpha", 3, template)).toBe("alpha");
+		expect(stripPrefix(WORD_JOINER + "aaa alpha", 3, template)).toBe("alpha");
+		expect(stripPrefixBroad(WORD_JOINER + "aaa alpha")).toBe("alpha");
+		expect(stripPrefix("aa alpha", 3, template)).toBe("aa alpha");
+	});
+
 	it("G8：渲染小写罗马数字（减法规则）", () => {
 		expect(renderNumeral("lower-roman", 1)).toBe("i");
 		expect(renderNumeral("lower-roman", 4)).toBe("iv");

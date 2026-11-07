@@ -181,6 +181,8 @@ const ru: Partial<Messages> = {
 	skipFillDrop: "Пропустить (убрать сегмент)",
 	skipFillNone: "Не нумеровать (оставить как есть)",
 
+	numeralDoubleLowerAlpha: "Двойные строчные буквы (aa, bb, cc)",
+
 	matchExact: "Точно",
 	matchPartial: "Частично",
 	matchSubtree: "Поддерево",

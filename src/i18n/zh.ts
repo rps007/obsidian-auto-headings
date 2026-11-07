@@ -163,6 +163,7 @@ const zh: Messages = {
 	numeralCjk: "一, 二, 三",
 	numeralCircled: "①, ②, ③",
 	numeralLowerAlpha: "a, b, c",
+	numeralDoubleLowerAlpha: "双小写字母（aa, bb, cc）",
 	numeralUpperAlpha: "A, B, C",
 	numeralLowerRoman: "i, ii, iii",
 	numeralUpperRoman: "I, II, III",

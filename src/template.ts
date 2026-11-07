@@ -12,6 +12,7 @@ export type NumeralStyle =
 	| "cjk"
 	| "circled"
 	| "lower-alpha"
+	| "double-lower-alpha"
 	| "upper-alpha"
 	| "lower-roman"
 	| "upper-roman";

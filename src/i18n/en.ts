@@ -171,6 +171,7 @@ const en: Messages = {
 	numeralCjk: "一, 二, 三",
 	numeralCircled: "①, ②, ③",
 	numeralLowerAlpha: "a, b, c",
+	numeralDoubleLowerAlpha: "Double lowercase letters (aa, bb, cc)",
 	numeralUpperAlpha: "A, B, C",
 	numeralLowerRoman: "i, ii, iii",
 	numeralUpperRoman: "I, II, III",
