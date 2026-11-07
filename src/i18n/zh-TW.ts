@@ -160,6 +160,8 @@ const zhTW: Partial<Messages> = {
 
 	numeralCjk: "一, 二, 三",
 
+	numeralDoubleLowerAlpha: "雙小寫字母（aa, bb, cc）",
+
 	matchExact: "全部",
 	matchPartial: "部分",
 	matchSubtree: "子樹",

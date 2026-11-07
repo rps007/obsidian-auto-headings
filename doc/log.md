@@ -15,6 +15,27 @@
 
 ---
 
+## 2026-11-07 双小写字母序号（未发版，交接：feat/double-lowercase-letters）
+
+### 做了什么
+
+- 模板编辑器新增双小写字母样式。序列从 `aa, bb, cc` 开始，`zz` 之后为 `aaa, bbb`。支持原有继承设置、实时预览和模板保存。
+- 仅显示和写入模式共用渲染器。新增 G10 自动化测试与测试库手验步骤，覆盖渲染、模板重载、父级重置与插件前缀清理。
+
+### 没做什么
+
+- 本周期未在桌面或手机真机运行。
+
+### 下一步
+
+- 审查分支，并使用测试库在桌面与手机验证模板下拉框。
+
+### 验证方式
+
+- 运行 `npm run preflight` 和 `npm run test:fuzz`。桌面与手机共用 `release/` 中的安装文件。
+
+---
+
 ## 2026-11-04 手写编号按置信度分级：整篇判定确定 / 存疑（未发版，交接：claude/foreign-confidence-tiers）
 
 ### 做了什么
@@ -60,26 +81,3 @@
 ### 验证方式
 
 - `npm run check`：docs 守卫、eslint、prettier 全过，测试仅已知 ICU 排序假红 whitelist.test.ts；`npm run test:fuzz` 全绿。
-
----
-
-## 2026-11-04 发版 1.3.1：拉丁词误判 + 纯编号标题叠号 + 新装重启切写入（交接：claude/release-1.3.1 → master，tag 1.3.1）
-
-### 做了什么
-
-- `npm run bump`：1.3.0 → 1.3.1；`doc/release-notes/1.3.1.md` 双语，致谢 @smallerxie（PR #11）。
-- 合入三项修复（11-03 / 11-04 见下方两块，10-29 已滚入 log-archive.md）：10-29「标题本身就是编号」不再叠号（J25 / J26 / V77）；11-03 PR #11 + 后续，拉丁词开头的标题不再当手写编号（J27 / J28 / H21）；11-04 新装 `templates/` 懒建，重启不再切写入（V5 / V78 / V79）。
-- testplan 状态格「未发版」→「1.3.1」；spec 3.10 / 3.22 / Roadmap 本次条目同步。
-
-### 没做什么
-
-- J25 / J26（纯编号标题）真机只看了守卫不叠号，提示文案未单独确认；iOS / Android / macOS / Linux 未上真机。
-- 「数字 + 空格」误判（`2024 总结`，写入模式下任一即拦）与 `Step 1` 漏判未修，已提新会话卡片「手写编号识别改为整篇判断（序列证据）」。
-
-### 下一步
-
-- 推送 master 与 tag 后核实 Release 工作流产物；用户到 Community Hub 点「Check for new releases」。
-
-### 验证方式
-
-- `npm run preflight` 全绿（唯一红为已知 ICU 排序假红 whitelist.test.ts）；真机见 11-03 / 11-04 两块。

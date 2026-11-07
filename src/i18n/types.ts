@@ -180,6 +180,7 @@ export interface Messages {
 	numeralCjk: string;
 	numeralCircled: string;
 	numeralLowerAlpha: string;
+	numeralDoubleLowerAlpha: string;
 	numeralUpperAlpha: string;
 	numeralLowerRoman: string;
 	numeralUpperRoman: string;

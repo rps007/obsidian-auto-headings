@@ -165,6 +165,8 @@ const ko: Partial<Messages> = {
 	skipFillDrop: "생략 (해당 구간 제외)",
 	skipFillNone: "번호 안 매기기 (그대로 두기)",
 
+	numeralDoubleLowerAlpha: "소문자 반복 (aa, bb, cc)",
+
 	matchExact: "전체",
 	matchPartial: "부분",
 	matchSubtree: "하위 트리",

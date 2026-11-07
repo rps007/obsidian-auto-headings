@@ -11,3 +11,4 @@
 | G7 | 同上 `ancestorNumeral=arabic` | `一` / `1.1` / `1.1.①` | ✅ |
 | **G8** | lower-roman：1/4/5/9/10/14/40/44/50/90/100/400/500/900/1000/1994/2024 | i/iv/v/ix/x/xiv/xl/xliv/l/xc/c/cd/d/cm/m/mcmxciv/mmxxiv | ✅（0.6.3 `toRoman`）|
 | **G9** | upper-roman：1/4/14/1994/2024 | I/IV/XIV/MCMXCIV/MMXXIV | ✅（0.6.3）|
+| G10 | H3 选择双小写字母，切换继承并重新载入模板 | 预览和两种编号模式一致，同级 `aa, bb, cc`，父级变更后重置；`zz` 后为 `aaa, bbb`；清理插件编号后保留原标题 | ✅（未发版，覆盖渲染、预览、继承、写入、仅显示与模板重载） |

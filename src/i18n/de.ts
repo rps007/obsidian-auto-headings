@@ -174,6 +174,8 @@ const de: Partial<Messages> = {
 	skipFillDrop: "Weglassen (Segment auslassen)",
 	skipFillNone: "Nicht nummerieren (unverändert lassen)",
 
+	numeralDoubleLowerAlpha: "Doppelte Kleinbuchstaben (aa, bb, cc)",
+
 	matchExact: "Exakt",
 	matchPartial: "Teilweise",
 	matchSubtree: "Teilbaum",

@@ -107,6 +107,8 @@ function numeralTokenPattern(style: NumeralStyle): string {
 			return "[\\u2460-\\u2473\\u3251-\\u325F\\u32B1-\\u32BF]";
 		case "lower-alpha":
 			return "[a-z]+";
+		case "double-lower-alpha":
+			return `(?:${Array.from("abcdefghijklmnopqrstuvwxyz", (letter) => `${letter}{2,}`).join("|")})`;
 		case "upper-alpha":
 			return "[A-Z]+";
 		case "lower-roman":
@@ -126,6 +128,7 @@ function numeralCharClass(style: NumeralStyle): string {
 		case "circled":
 			return "\\u2460-\\u2473\\u3251-\\u325F\\u32B1-\\u32BF";
 		case "lower-alpha":
+		case "double-lower-alpha":
 			return "a-z";
 		case "upper-alpha":
 			return "A-Z";
@@ -136,7 +139,7 @@ function numeralCharClass(style: NumeralStyle): string {
 	}
 }
 
-/** 序号样式的固定枚举顺序，供构造 union token 时稳定遍历。 */
+/** 全局剥离用的序号样式：lower-alpha 已覆盖双小写字母；手写编号仍只认单字母。 */
 const ALL_NUMERAL_STYLES: NumeralStyle[] = [
 	"arabic",
 	"cjk",
